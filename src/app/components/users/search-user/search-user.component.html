@@ -1,0 +1,19 @@
+<form class="example-form row mt-3" [formGroup]="userGroup" (ngSubmit)="searchApi(userInput.value)" (ngReset)="reset()">
+
+  <mat-form-field class="example-form-field col-sm-6" >
+    <mat-label>Nome do Usuário</mat-label>
+    <input matInput type="text" #userInput name="nome" formControlName="nome">
+    <mat-error *ngIf="(userGroup.touched || userGroup.dirty) && f.nome.errors?.required">Este campo é obrigatório!</mat-error>
+    <mat-error *ngIf="(userGroup.touched || userGroup.dirty) && f.nome.errors?.minlength">Nome do usuário é muito curto!</mat-error>
+    <mat-error *ngIf="(userGroup.touched || userGroup.dirty) && f.nome.errors?.maxlength">Nome do usuário é muito grande!</mat-error>
+    <button matSuffix mat-icon-button aria-label="Clear" type="reset">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <div class="col-sm-3">
+    <button class="btn btn-dark mt-2 ms-1" type="submit">Procurar</button>
+  </div>
+</form>
+
+
+

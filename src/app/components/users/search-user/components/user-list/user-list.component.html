@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <div *ngFor="let user of users">
+    <div class="d-flex">
+      <a [routerLink]="['/user-details', user.login]" class="list-group-item list-group-item-action py-3">
+        {{ user.name || user.login }}
+      </a>
+      <button (click)="deleteUser(user.login)" class="btn btn-outline-dark">X</button>
+    </div>
+  </div>
+</div>
+

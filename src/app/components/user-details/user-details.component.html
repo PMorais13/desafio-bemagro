@@ -1,0 +1,18 @@
+<ng-container *ngIf="user">
+  <div class="row">
+    <div>
+      <button routerLink="" type="button" class="btn btn-outline-dark mt-4 col-sm-1 ms-1">Voltar</button>
+    </div>
+    <div class="container d-flex col-sm-8">
+      <div>
+        <app-info-user class="col-sm-6 mt-4" [diretivaUser]="user">
+        </app-info-user>
+        <ng-container *ngIf="!coordinates" class="container">
+          <p class="mt-2">Desculpe, usuário sem localizalçao!</p>
+        </ng-container>
+      </div>
+      <app-map class="map col-sm-6" [diretiveMap]="coordinates"></app-map>
+    </div>
+  </div>
+</ng-container>
+

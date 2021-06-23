@@ -1,0 +1,25 @@
+<div class="center">
+  <div id="card" class="card" style="width: 18rem;">
+    <img [src]="diretivaUser?.avatar_url" class="card-img-top" alt="...">
+    <div class="card-body">
+      <ng-container *ngIf="diretivaUser?.name">
+        <h4 class="card-title">Nome: {{diretivaUser?.name}}</h4>
+      </ng-container>
+      <ng-container *ngIf="diretivaUser?.name">
+        <p class="card-title">Login: {{diretivaUser?.login}}</p>
+      </ng-container>
+      <ng-container *ngIf="diretivaUser?.location">
+        <p class="card-title">Localização: {{diretivaUser?.location}}</p>
+      </ng-container>
+      <ng-container *ngIf="diretivaUser?.bio">
+        <p class="card-text">Bio: {{diretivaUser?.bio}}</p>
+      </ng-container>
+      <ng-container *ngIf="diretivaUser?.public_repos">
+        <p class="card-text">Numero de Repositórios Públicos: {{diretivaUser?.public_repos}}</p>
+      </ng-container>
+      <ng-container *ngIf="diretivaUser?.html_url">
+        <a [href]="diretivaUser?.html_url" class="btn btn-dark">Github</a>
+      </ng-container>
+    </div>
+  </div>
+</div>

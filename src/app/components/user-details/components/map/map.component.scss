@@ -1,0 +1,33 @@
+
+
+.map-container {
+  margin: 0 30px;
+  width: 700px;
+  height: 700px;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 100%;
+}
+
+@media only screen and (max-width: 1230px){
+  .map-container {
+    margin: 10px;
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 575px){
+  .map-container {
+    margin: 10px 0 0 0;
+    width: 100%;
+    height: 400px;
+  }
+}
