@@ -1,9 +1,9 @@
 <div class="center">
   <div id="card" class="card" style="width: 18rem;">
-    <img [src]="diretivaUser?.avatar_url" class="card-img-top" alt="...">
+    <img [src]="diretivaUser?.name" class="card-img-top" alt="...">
     <div class="card-body">
       <ng-container *ngIf="diretivaUser?.name">
-        <h4 class="card-title">Nome: {{diretivaUser?.name}}</h4>
+        <h4 class="card-title">Nome: {{diretivaUser}}</h4>
       </ng-container>
       <ng-container *ngIf="diretivaUser?.name">
         <p class="card-title">Login: {{diretivaUser?.login}}</p>

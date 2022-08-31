@@ -26,9 +26,7 @@ export class InfoUserComponent implements OnInit, OnChanges {
     if(this.diretivaUser == undefined){
       document.getElementById('card')!.style.display="none"
     }
-
   }
-
 }
 
 

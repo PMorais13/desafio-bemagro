@@ -56,12 +56,11 @@ export class MapComponent {
     }
 
     const circle = L.circle([definedCoordinates.y, definedCoordinates.x], {
-      color: 'red',
-      fillColor: '#f03',
+      color: 'blue',
+      fillColor: 'blue',
       fillOpacity: 0.5,
-      radius: 500
+      radius: 200
     }).addTo(this.map);
-
   }
 }
 

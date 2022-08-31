@@ -23,11 +23,18 @@ export class UsersListService {
     }
   }
 
+  /**
+   * metodo responsávle por criar a lista de usuários procurados
+   * @returns lista de usuários procurados
+   */
   public getSearchedUsers(): Observable<Array<any>>{
     return this.searchedUsers.asObservable();
   }
 
-  public deleteUser(userLogin: string) {
+  /**
+   * deleta o usuário selecionado
+   */
+  public deleteUser(userLogin: string): void {
     if(!userLogin){
       return
     }

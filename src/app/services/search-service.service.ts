@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class SearchServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   gitApi: string = 'https://api.github.com/users/';
 
-  getUser(user:string): Observable<any>{
+  public getUser(user: string): Observable<any>{
     return this.http.get(this.gitApi+user);
   }
 }

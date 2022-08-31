@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs/operators'
+import { take, first } from 'rxjs/operators'
 import { GeocodingService } from 'src/app/services/geocoding.service';
 import { UsersListService } from 'src/app/services/users-list.service';
 
@@ -34,7 +34,6 @@ export class UserDetailsComponent implements OnInit {
   }
 
   public removerAcentosEspaco(str: string) {
-
     str = str.replace(/^\s+|\s+$/g, ''); // remover espaco do comeco e do fim
     str = str.toLowerCase();
     // remover acentuacao
@@ -43,7 +42,6 @@ export class UserDetailsComponent implements OnInit {
     for (var i = 0, l = from.length; i < l; i++) {
       str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
     }
-
     str = str.replace(/[^a-z0-9 -]/g, '') // remover caracteres inválidos
       .replace(/\s+/g, '+') // Remover espaços
       .replace(/-+/g, ''); //Remover traços
@@ -54,8 +52,8 @@ export class UserDetailsComponent implements OnInit {
     if(!location){
       return
     }
-    location = this.removerAcentosEspaco(location);
-    this.geocodingService.getCoordinates(location).subscribe(coordinates => {
+    let formatLocation = this.removerAcentosEspaco(location);
+    this.geocodingService.getCoordinates(formatLocation).pipe(first()).subscribe(coordinates => {
       this.coordinates = coordinates;
     });
   }
